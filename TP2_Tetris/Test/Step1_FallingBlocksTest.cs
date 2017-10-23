@@ -153,65 +153,65 @@ namespace Test
             );
         }
 
-        //[TestMethod]
-        //public void block_stops_falling_when_it_hits_the_bottom()
-        //{
-        //    // arrange
-        //    FallToLastRow();
+        [TestMethod]
+        public void block_stops_falling_when_it_hits_the_bottom()
+        {
+            // arrange
+            FallToLastRow();
 
-        //    // act
-        //    board.Tick();
+            // act
+            board.Tick();
 
-        //    // assert
-        //    Assert.IsFalse(board.IsFallingBlock());
-        //}
+            // assert
+            Assert.IsFalse(board.IsFallingBlock());
+        }
 
         #endregion
 
         #region when_a_block_lands_on_another_block
 
-        //void DropBlockAfterBlock()
-        //{
-        //    DropBlock('X');
-        //    board.Tick();
-        //    board.Tick();
-        //    board.Tick();
-        //    DropBlock('Y');
-        //    board.Tick();
-        //}
+        void DropBlockAfterBlock()
+        {
+            DropBlock('X');
+            board.Tick();
+            board.Tick();
+            board.Tick();
+            DropBlock('Y');
+            board.Tick();
+        }
 
-        //[TestMethod]
-        //public void block_is_still_falling_right_above_the_other_block()
-        //{
-        //    // act
-        //    DropBlockAfterBlock();
+        [TestMethod]
+        public void block_is_still_falling_right_above_the_other_block()
+        {
+            // act
+            DropBlockAfterBlock();
 
-        //    // assert
-        //    Assert.AreEqual(board.ToString(),
-        //        "...\n" +
-        //        ".Y.\n" +
-        //        ".X.\n"
-        //    );
-        //    Assert.IsTrue(board.IsFallingBlock());
-        //}
+            // assert
+            Assert.AreEqual(board.ToString(),
+                "...\n" +
+                ".Y.\n" +
+                ".X.\n"
+            );
+            Assert.IsTrue(board.IsFallingBlock());
+        }
 
-        //[TestMethod]
-        //public void block_stops_when_it_hits_the_other_block()
-        //{
-        //    // arrange
-        //    DropBlockAfterBlock();
+        [TestMethod]
+        public void block_stops_when_it_hits_the_other_block()
+        {
+            // arrange
+            DropBlockAfterBlock();
 
-        //    // act
-        //    board.Tick();
+            // act
+            board.Tick();
 
-        //    // assert
-        //    Assert.AreEqual(board.ToString(),
-        //        "...\n" +
-        //        ".Y.\n" +
-        //        ".X.\n"
-        //    );
-        //    Assert.IsFalse(board.IsFallingBlock());
-        //}
+            // assert
+            Assert.AreEqual(board.ToString(),
+                "...\n" +
+                ".Y.\n" +
+                ".X.\n"
+            );
+            Assert.IsFalse(board.IsFallingBlock());
+        }
 
         #endregion
     }

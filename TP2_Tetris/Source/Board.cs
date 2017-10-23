@@ -7,6 +7,7 @@ namespace Source
     {
         readonly int rows;
         readonly int columns;
+        public Block[,] board;
         public List<Block> blocks;
         
 
@@ -14,8 +15,20 @@ namespace Source
         {
             this.rows = rows;
             this.columns = columns;
-
+            this.board = new Block[rows, columns];
             this.blocks = new List<Block>();
+            FillEmptyBoard();
+        }
+
+        private void FillEmptyBoard()
+        {
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    board[i, j] = new Block('.');
+                }
+            }
         }
 
         public override String ToString()
@@ -64,11 +77,26 @@ namespace Source
 
         public void Tick()
         {
-            foreach(Block block in blocks)
+            foreach (Block block in blocks)
             {
-                if (block.isFalling) block.x += 1;
+                if (block.x == rows - 1)
+                {
+                    block.isFalling = false;
+                    continue;
+                }
+
+                if (board[block.x + 1, block.y].c != '.') {
+                    block.isFalling = false;
+                }
+
+                if (block.isFalling && block.x < rows - 1) {
+                    board[block.x, block.y] = new Block('.');
+                    block.x += 1;
+                    board[block.x, block.y] = new Block(block.c);
+                }
             }
         }
+        
     }
 }
  
