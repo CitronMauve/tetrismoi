@@ -47,30 +47,30 @@ namespace Test
             board = new Board(6, 8);
         }
 
-        //void RepeatTick(int times)
-        //{
-        //    for (int i = 0; i < times; i++)
-        //        board.Tick();
-        //}
+        void RepeatTick(int times)
+        {
+            for (int i = 0; i < times; i++)
+				board.Tick();
+        }
 
         #region when_a_piece_is_dropped
 
-        //[TestMethod]
-        //public void tetromino_starts_from_top_middle()
-        //{
-        //    // act
-        //    board.Drop(Tetromino.T_SHAPE);
+        [TestMethod]
+        public void tetromino_starts_from_top_middle()
+        {
+            // act
+            board.Drop(Tetromino.T_SHAPE);
 
-        //    // assert
-        //    Assert.AreEqual(board.ToString(),
-        //        "..TTT...\n" +
-        //        "...T....\n" +
-        //        "........\n" +
-        //        "........\n" +
-        //        "........\n" +
-        //        "........\n"
-        //    );
-        //}
+            // assert
+            Assert.AreEqual(board.ToString(),
+                "..TTT...\n" +
+                "...T....\n" +
+                "........\n" +
+                "........\n" +
+                "........\n" +
+                "........\n"
+            );
+        }
 
         #endregion
 

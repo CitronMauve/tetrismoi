@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Source
 {
-    class Piece
+    public class Piece
     {
         public interface Grid
         {
@@ -22,7 +22,7 @@ namespace Source
             int rows = CountRows(plop);
             int columns = CountColumns(plop);
 
-           this.matrice = new Char[rows, columns];
+			this.matrice = new Char[rows, columns];
 
             int indice = 0;
 
